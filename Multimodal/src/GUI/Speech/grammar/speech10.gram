@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for speech example
+ */
+
+grammar speech;
+//import <com.sun.speech.app.numbers.*>;
+
+
+public <speech>=  (<number> <p> <number>);
+
+<number> = (one | two | three | four | five | six | seven | eight | nine | zero);
+
+<p>= (point | dot) ;

@@ -1,0 +1,32 @@
+<graph Test> algo(prims) graph(uw) input(numpad) node(recog)
+
+	<node> location(837,197) size(100) rootNode()
+	<node> location(647,293) size(64)
+
+	<edge> node0(1) node1(0) weight(2.0)
+</graph>
+<graph test> algo(prims) graph(uw) input(numpad) node(recog)
+
+	<node> location(806,226) size(128) rootNode()
+	<node> location(517,223) size(92)
+	<node> location(646,120) size(58)
+
+	<edge> node0(1) node1(2) weight(2.0)
+
+	<edge> node0(1) node1(0) weight(9.0)
+
+</graph>
+<graph test> algo(prims) graph(uw) input(numpad) node(recog)
+
+	<node> location(806,226) size(128) rootNode()
+	<node> location(517,223) size(92)
+	<node> location(646,120) size(58)
+	<node> location(986,63) size(57)
+
+	<edge> node0(1) node1(2) weight(2.0)
+
+	<edge> node0(1) node1(0) weight(9.0)
+
+	<edge> node0(2) node1(3) weight(2.0)
+
+</graph>

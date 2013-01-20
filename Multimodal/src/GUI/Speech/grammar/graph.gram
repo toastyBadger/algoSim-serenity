@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Digits Grammar for Hello World example
+ */
+
+grammar graphChanges;
+
+
+
+
+<numbers> =(zero | one | two | three | four | five | six | seven | eight | nine);
+
+public <rawr> = (select <numbers> <numbers>)|(delete <numbers> <numbers>)|(run);

@@ -1,0 +1,26 @@
+these will probably change over the period but for now keep everything on the same line to make things easier
+
+<graph [name]> 				-- Name for the graph, this will be shown on the load menu
+	algo([algorithm])		-- can be Prims, Kruskals or Dijkstras atm
+	graph([graph type]) 	-- this is intimated to be undirected unless other wise stated
+	input([input type])		-- this controls the input type, if not included it will use the default numpad
+	node([node type])		-- this controls how the nodes should be drawn, if this is set to auto then the nodes don't need a size attribute
+	teachingMode()			-- this controls how the user can interact with the program, this mode extends the functionality if the simulator
+	advancedMode()			-- same as above, but this mode extends the functionality of the GUI
+	
+
+	<node> 					-- tells the interpreter that the next few lines refer to a node
+		Location(x, y)	   	-- tells the interpreter where to draw the node
+		size(#)				-- tells the interpreter the size of the node in pixels
+		name([name])    	-- this is not required, but if present then it should over-ride the displayed name for the node
+		rootNode()			-- if either of these is included then these will be set to be the root / end for this graph
+		endNode()			-- if both are included then the last will be used
+	...
+
+	<edge> 					-- the next few lines are on a new edge
+		node0(#)			-- the start node (id of the node)
+		node1(#)			-- the end node (id of the node) -- the ID will be written into the saved file to make it easier when being looked at, but wont actually be used in the code
+		weight(##.##)		-- the weight of the edge, in double format... ie 13.9
+	...
+
+ -- when loading a graph it will use the preset options, to change it just chose the options beforehand as per normal, or while drawing the graph
