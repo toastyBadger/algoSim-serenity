@@ -3,6 +3,8 @@ algoSim-serenity
 
 Multimodal node graph interpreter and simulator for MST/BFS/DFS/etc algortihms
 
+This is a netbeans project that has been written slowly over the course of 2 years. Included are all of the sourcefiles and stuff.
+
 Commit 5 -> (algo_rewrite branch)
   - job for today: fit the new code into the current algorithms
 	- see what can be done with the algorithms to clear them up a bit, make them look prettier and more functional
