@@ -15,12 +15,44 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
+ * This is the base class for all of the possible algorithms.
+ * @version 1.1
+ * #####
+ * This version has been updated to fit with the new structure
+ *
+ * @version 1
+ * #####
+ * Initial build
  *
  * @author tab00u
  */
 public class AlgorithmBase extends JPanel implements Serializable {
 
-    private static long serialVersionUID = 1l;
+    private static long serialVersionUID = 19743432l;
+
+    private GraphNode rootNode;
+    private GraphNode endNode;
+    private Graphics graphic;
+    private GUI gui = null;
+    private int pauseDUR = 0;
+    private LinkedList<GraphNode> nodes;
+    private LinkedList<Edge> edges;
+    private Graph graph;
+    private TextArea STDout;
+    private TextArea PQout;
+    private nodeList current = null;
+    private static boolean directed = false;
+    private Color active = Color.YELLOW;
+    private Color visited = Color.RED;
+    private Color used = Color.BLUE;
+    private Color start_n = used;
+    private Color goal_n = used;
+    private int endID = -1;
+    private String guess;
+    private String nextNode;
+
+    private GraphStage stage = null;
+    private ProcessedGraph process = new ProcessedGraph();
 
     /**
      * @return the serialVersionUID
@@ -49,26 +81,6 @@ public class AlgorithmBase extends JPanel implements Serializable {
     public static void setDirected(boolean aDirected) {
         directed = aDirected;
     }
-    private GraphNode rootNode;
-    private GraphNode endNode;
-    private Graphics graphic;
-    private GUI gui = null;
-    private int pauseDUR = 0;
-    private LinkedList<GraphNode> nodes;
-    private LinkedList<Edge> edges;
-    private Graph graph;
-    private TextArea STDout;
-    private TextArea PQout;
-    private nodeList current = null;
-    private static boolean directed = false;
-    private Color active = Color.YELLOW;
-    private Color visited = Color.RED;
-    private Color used = Color.BLUE;
-    private Color start_n = used;
-    private Color goal_n = used;
-    private int endID = -1;
-    private String guess;
-    private String nextNode;
 
     public void setD(boolean b) {
         setDirected(b);
@@ -99,7 +111,7 @@ public class AlgorithmBase extends JPanel implements Serializable {
     /**
      * This traces and displays the route taken for a given minimum spanning
      * tree (Or at least on formatted using nodeList[])
-     *
+     * @deprecated
      * @param n - a list of nodes that have been expanded, so each node has a
      * predecessor.
      */
@@ -137,7 +149,10 @@ public class AlgorithmBase extends JPanel implements Serializable {
         update(getGraphic());
     }
 
-    //TODO
+    /**
+     * @deprecated
+     * @param n
+     */
     protected void traceD(nodeList[] n) {
         // this loop allows the algorithm to show the path taken on the canvas
         int i = getEndID();
@@ -179,10 +194,18 @@ public class AlgorithmBase extends JPanel implements Serializable {
         update(getGraphic());
     }
 
+    /**
+     * @deprecated
+     */
     protected void pause() {
         pause(getPauseDUR(), false);
     }
 
+    /**
+     *@deprecated
+     * @param dur
+     * @param bool
+     */
     protected void pause(int dur, boolean bool) {
         if (getGraph().teachingMode && bool) {
             setGuess(JOptionPane.showInputDialog("Which Node do you think will be expanded next?"));
