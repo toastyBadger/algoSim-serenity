@@ -40,11 +40,11 @@ public class algoSim_Start extends javax.swing.JPanel {
         Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
 
         JFrame frame = new JFrame();
-        frame.add(this);  
+        frame.add(this);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setTitle("AlgoSim v1.2");
+        frame.setTitle("Serenity *Beta* (0.1.2)");
         frame.setLocation((screensize.width / 2) - (this.getWidth() / 2), (screensize.height / 2) - (this.getHeight() / 2));
         img = new javax.swing.ImageIcon(getClass().getResource("/GUI/Images/logo.png")).getImage();
         frame.setIconImage(img);
